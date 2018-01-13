@@ -1,0 +1,219 @@
+usage: wingchun strategy -n strategy_name -p file_path
+wingchun: error: argument -n/--name: expected one argument
+usage: wingchun strategy -n strategy_name -p file_path
+wingchun: error: argument -n/--name: expected one argument
+usage: wingchun strategy -n strategy_name -p file_path
+wingchun: error: argument -n/--name: expected one argument
+usage: wingchun strategy -n strategy_name -p file_path
+wingchun: error: argument -n/--name: expected one argument
+Traceback (most recent call last):
+  File "/usr/local/bin/wingchun", line 120, in <module>
+    WingchunEntrance()
+  File "/usr/local/bin/wingchun", line 57, in __init__
+    getattr(self, args.command)()
+  File "/usr/local/bin/wingchun", line 80, in strategy
+    kungfu.wingchun.run_strategy(args.name, args.path)
+  File "/usr/local/lib/python3.5/dist-packages/kungfu/wingchun/__init__.py", line 25, in run_strategy
+    strategy = Strategy(name, path)
+  File "/usr/local/lib/python3.5/dist-packages/kungfu/wingchun/strategy.py", line 35, in __init__
+    self.module = self.get_module(file_name)
+  File "/usr/local/lib/python3.5/dist-packages/kungfu/wingchun/strategy.py", line 43, in get_module
+    fout.write(open(file_name).read())
+FileNotFoundError: [Errno 2] No such file or directory: 'daiab'
+18-01-12 20:18:01.650 INFO  daiab %% - [~IWCStrategy] 
+Traceback (most recent call last):
+  File "/usr/local/bin/wingchun", line 120, in <module>
+    WingchunEntrance()
+  File "/usr/local/bin/wingchun", line 57, in __init__
+    getattr(self, args.command)()
+  File "/usr/local/bin/wingchun", line 80, in strategy
+    kungfu.wingchun.run_strategy(args.name, args.path)
+  File "/usr/local/lib/python3.5/dist-packages/kungfu/wingchun/__init__.py", line 25, in run_strategy
+    strategy = Strategy(name, path)
+  File "/usr/local/lib/python3.5/dist-packages/kungfu/wingchun/strategy.py", line 35, in __init__
+    self.module = self.get_module(file_name)
+  File "/usr/local/lib/python3.5/dist-packages/kungfu/wingchun/strategy.py", line 43, in get_module
+    fout.write(open(file_name).read())
+FileNotFoundError: [Errno 2] No such file or directory: 'daiab'
+18-01-12 20:18:54.102 INFO  daiab %% - [~IWCStrategy] 
+Traceback (most recent call last):
+  File "/usr/local/bin/wingchun", line 120, in <module>
+    WingchunEntrance()
+  File "/usr/local/bin/wingchun", line 57, in __init__
+    getattr(self, args.command)()
+  File "/usr/local/bin/wingchun", line 80, in strategy
+    kungfu.wingchun.run_strategy(args.name, args.path)
+  File "/usr/local/lib/python3.5/dist-packages/kungfu/wingchun/__init__.py", line 25, in run_strategy
+    strategy = Strategy(name, path)
+  File "/usr/local/lib/python3.5/dist-packages/kungfu/wingchun/strategy.py", line 35, in __init__
+    self.module = self.get_module(file_name)
+  File "/usr/local/lib/python3.5/dist-packages/kungfu/wingchun/strategy.py", line 43, in get_module
+    fout.write(open(file_name).read())
+FileNotFoundError: [Errno 2] No such file or directory: 'daiab'
+18-01-12 20:19:52.264 INFO  daiab %% - [~IWCStrategy] 
+18-01-12 20:20:08.357 INFO  daiab %% - initialize 
+18-01-12 20:20:08.357 INFO  daiab %% - (OUR SIGNAL) False 
+18-01-12 20:20:08.357 INFO  daiab %% - [start] data started 
+18-01-12 20:20:08.365 DEBUG daiab %% - [td_login] (source)1 (ready)0 (pos){"FeeSetup":{"future":{"ctr_multi":200,"fee_multi":[2.3e-05,0.00069,2.3e-05],"min_fee":0.0,"type":"amount"},"future_exotic":{"c":{"ctr_multi":10,"fee_multi":1.2,"min_fee":0.0,"type":"volume"},"c1803":{"ctr_multi":10,"fee_multi":0.2,"min_fee":0.0,"type":"volume"},"ic":{"ctr_multi":200,"fee_multi":[2.3e-05,0.00069,2.3e-05],"min_fee":0.0,"type":"amount"},"rb":{"ctr_multi":10,"fee_multi":0.0001,"min_fee":0.0,"type":"amount"},"rb1801":{"ctr_multi":10,"fee_multi":[0.0001,0.0005,0.0001],"min_fee":0.0,"type":"amount"}},"stock":{"ctr_multi":1,"fee_multi":0.0003,"min_fee":0.0,"type":"amount"}},"name":"daiab","ok":false} 
+18-01-12 20:20:08.365 INFO  daiab %% - td connected 
+Traceback (most recent call last):
+  File "/usr/local/bin/wingchun", line 120, in <module>
+    WingchunEntrance()
+  File "/usr/local/bin/wingchun", line 57, in __init__
+    getattr(self, args.command)()
+  File "/usr/local/bin/wingchun", line 80, in strategy
+    kungfu.wingchun.run_strategy(args.name, args.path)
+  File "/usr/local/lib/python3.5/dist-packages/kungfu/wingchun/__init__.py", line 25, in run_strategy
+    strategy = Strategy(name, path)
+  File "/usr/local/lib/python3.5/dist-packages/kungfu/wingchun/strategy.py", line 29, in __init__
+    self.strategy = libwingchunstrategy.Strategy(strategy_name)
+RuntimeError: cannot register client: daiab
+18-01-12 20:21:15.732 DEBUG daiab %% - [DataWrapper] signal received: 15 
+18-01-12 20:21:37.235 INFO  daiab %% - initialize 
+18-01-12 20:21:37.235 INFO  daiab %% - (OUR SIGNAL) False 
+18-01-12 20:21:37.235 INFO  daiab %% - [start] data started 
+18-01-12 20:21:37.243 DEBUG daiab %% - [td_login] (source)1 (ready)1 (pos){"Cost":null,"FeeSetup":{"future":{"ctr_multi":200,"fee_multi":[2.3e-05,0.00069,2.3e-05],"min_fee":0.0,"type":"amount"},"future_exotic":{"c":{"ctr_multi":10,"fee_multi":1.2,"min_fee":0.0,"type":"volume"},"c1803":{"ctr_multi":10,"fee_multi":0.2,"min_fee":0.0,"type":"volume"},"ic":{"ctr_multi":200,"fee_multi":[2.3e-05,0.00069,2.3e-05],"min_fee":0.0,"type":"amount"},"rb":{"ctr_multi":10,"fee_multi":0.0001,"min_fee":0.0,"type":"amount"},"rb1801":{"ctr_multi":10,"fee_multi":[0.0001,0.0005,0.0001],"min_fee":0.0,"type":"amount"}},"stock":{"ctr_multi":1,"fee_multi":0.0003,"min_fee":0.0,"type":"amount"}},"Pos":null,"Source":1,"name":"daiab","nano":1515759675513483822,"ok":true} 
+18-01-12 20:21:37.243 INFO  daiab %% - td connected 
+18-01-12 20:21:37.243 INFO  daiab %% - (Already Have Position) {"Cost":null,"FeeSetup":{"future":{"ctr_multi":200,"fee_multi":[2.3e-05,0.00069,2.3e-05],"min_fee":0.0,"type":"amount"},"future_exotic":{"c":{"ctr_multi":10,"fee_multi":1.2,"min_fee":0.0,"type":"volume"},"c1803":{"ctr_multi":10,"fee_multi":0.2,"min_fee":0.0,"type":"volume"},"ic":{"ctr_multi":200,"fee_multi":[2.3e-05,0.00069,2.3e-05],"min_fee":0.0,"type":"amount"},"rb":{"ctr_multi":10,"fee_multi":0.0001,"min_fee":0.0,"type":"amount"},"rb1801":{"ctr_multi":10,"fee_multi":[0.0001,0.0005,0.0001],"min_fee":0.0,"type":"amount"}},"stock":{"ctr_multi":1,"fee_multi":0.0003,"min_fee":0.0,"type":"amount"}},"Pos":null,"Source":1,"ok":true} 
+18-01-12 20:23:00.245 INFO  daiab %% - On Bar No.0 (MIN_INTERVAL) 1 (SOURCE_INDEX) 1 
+18-01-12 20:23:00.245 INFO  daiab %% - {} 
+18-01-12 20:23:00.245 INFO  daiab %% - (Reread OUR SIGNAL) False 
+18-01-12 20:24:00.245 INFO  daiab %% - On Bar No.0 (MIN_INTERVAL) 1 (SOURCE_INDEX) 1 
+18-01-12 20:24:00.245 INFO  daiab %% - {} 
+18-01-12 20:24:00.245 INFO  daiab %% - (Reread OUR SIGNAL) False 
+18-01-12 20:25:00.245 INFO  daiab %% - On Bar No.0 (MIN_INTERVAL) 1 (SOURCE_INDEX) 1 
+18-01-12 20:25:00.245 INFO  daiab %% - {} 
+18-01-12 20:25:00.245 INFO  daiab %% - (Reread OUR SIGNAL) False 
+18-01-12 20:26:00.245 INFO  daiab %% - On Bar No.0 (MIN_INTERVAL) 1 (SOURCE_INDEX) 1 
+18-01-12 20:26:00.245 INFO  daiab %% - {} 
+18-01-12 20:26:00.245 INFO  daiab %% - (Reread OUR SIGNAL) False 
+18-01-12 20:27:00.245 INFO  daiab %% - On Bar No.0 (MIN_INTERVAL) 1 (SOURCE_INDEX) 1 
+18-01-12 20:27:00.245 INFO  daiab %% - {} 
+18-01-12 20:27:00.245 INFO  daiab %% - (Reread OUR SIGNAL) False 
+18-01-12 20:27:28.173 DEBUG daiab %% - [DataWrapper] signal received: 15 
+18-01-12 20:27:41.098 INFO  daiab %% - initialize 
+18-01-12 20:27:41.098 INFO  daiab %% - (OUR SIGNAL) False 
+18-01-12 20:27:41.098 INFO  daiab %% - [start] data started 
+18-01-12 20:27:41.106 DEBUG daiab %% - [td_login] (source)1 (ready)1 (pos){"Cost":null,"FeeSetup":{"future":{"ctr_multi":200,"fee_multi":[2.3e-05,0.00069,2.3e-05],"min_fee":0.0,"type":"amount"},"future_exotic":{"c":{"ctr_multi":10,"fee_multi":1.2,"min_fee":0.0,"type":"volume"},"c1803":{"ctr_multi":10,"fee_multi":0.2,"min_fee":0.0,"type":"volume"},"ic":{"ctr_multi":200,"fee_multi":[2.3e-05,0.00069,2.3e-05],"min_fee":0.0,"type":"amount"},"rb":{"ctr_multi":10,"fee_multi":0.0001,"min_fee":0.0,"type":"amount"},"rb1801":{"ctr_multi":10,"fee_multi":[0.0001,0.0005,0.0001],"min_fee":0.0,"type":"amount"}},"stock":{"ctr_multi":1,"fee_multi":0.0003,"min_fee":0.0,"type":"amount"}},"Pos":null,"Source":1,"name":"daiab","nano":1515760047951247033,"ok":true} 
+18-01-12 20:27:41.106 INFO  daiab %% - td connected 
+18-01-12 20:27:41.106 INFO  daiab %% - (Already Have Position) {"Cost":null,"FeeSetup":{"future":{"ctr_multi":200,"fee_multi":[2.3e-05,0.00069,2.3e-05],"min_fee":0.0,"type":"amount"},"future_exotic":{"c":{"ctr_multi":10,"fee_multi":1.2,"min_fee":0.0,"type":"volume"},"c1803":{"ctr_multi":10,"fee_multi":0.2,"min_fee":0.0,"type":"volume"},"ic":{"ctr_multi":200,"fee_multi":[2.3e-05,0.00069,2.3e-05],"min_fee":0.0,"type":"amount"},"rb":{"ctr_multi":10,"fee_multi":0.0001,"min_fee":0.0,"type":"amount"},"rb1801":{"ctr_multi":10,"fee_multi":[0.0001,0.0005,0.0001],"min_fee":0.0,"type":"amount"}},"stock":{"ctr_multi":1,"fee_multi":0.0003,"min_fee":0.0,"type":"amount"}},"Pos":null,"Source":1,"ok":true} 
+18-01-12 20:29:00.245 INFO  daiab %% - On Bar No.0 (MIN_INTERVAL) 1 (SOURCE_INDEX) 1 
+18-01-12 20:29:00.245 INFO  daiab %% - {} 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/kungfu/wingchun/strategy.py", line 78, in func_parse
+    return func(context, new_dict, min_interval, source, nano)
+  File "/opt/kungfu/runtime/ma_5_700_kungfu.py", line 182, in on_bar
+    if ON_BAR_COUNT % 5 == 0:
+UnboundLocalError: local variable 'ON_BAR_COUNT' referenced before assignment
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  on_market_bar
+Aborted (core dumped)
+18-01-12 20:30:45.242 INFO  daiab %% - initialize 
+18-01-12 20:30:45.243 INFO  daiab %% - (OUR SIGNAL) False 
+18-01-12 20:30:45.243 INFO  daiab %% - [start] data started 
+18-01-12 20:30:45.251 DEBUG daiab %% - [td_login] (source)1 (ready)1 (pos){"Cost":null,"FeeSetup":{"future":{"ctr_multi":200,"fee_multi":[2.3e-05,0.00069,2.3e-05],"min_fee":0.0,"type":"amount"},"future_exotic":{"c":{"ctr_multi":10,"fee_multi":1.2,"min_fee":0.0,"type":"volume"},"c1803":{"ctr_multi":10,"fee_multi":0.2,"min_fee":0.0,"type":"volume"},"ic":{"ctr_multi":200,"fee_multi":[2.3e-05,0.00069,2.3e-05],"min_fee":0.0,"type":"amount"},"rb":{"ctr_multi":10,"fee_multi":0.0001,"min_fee":0.0,"type":"amount"},"rb1801":{"ctr_multi":10,"fee_multi":[0.0001,0.0005,0.0001],"min_fee":0.0,"type":"amount"}},"stock":{"ctr_multi":1,"fee_multi":0.0003,"min_fee":0.0,"type":"amount"}},"Pos":null,"Source":1,"name":"daiab","nano":1515760140128315945,"ok":true} 
+18-01-12 20:30:45.251 INFO  daiab %% - td connected 
+18-01-12 20:30:45.251 INFO  daiab %% - (Already Have Position) {"Cost":null,"FeeSetup":{"future":{"ctr_multi":200,"fee_multi":[2.3e-05,0.00069,2.3e-05],"min_fee":0.0,"type":"amount"},"future_exotic":{"c":{"ctr_multi":10,"fee_multi":1.2,"min_fee":0.0,"type":"volume"},"c1803":{"ctr_multi":10,"fee_multi":0.2,"min_fee":0.0,"type":"volume"},"ic":{"ctr_multi":200,"fee_multi":[2.3e-05,0.00069,2.3e-05],"min_fee":0.0,"type":"amount"},"rb":{"ctr_multi":10,"fee_multi":0.0001,"min_fee":0.0,"type":"amount"},"rb1801":{"ctr_multi":10,"fee_multi":[0.0001,0.0005,0.0001],"min_fee":0.0,"type":"amount"}},"stock":{"ctr_multi":1,"fee_multi":0.0003,"min_fee":0.0,"type":"amount"}},"Pos":null,"Source":1,"ok":true} 
+18-01-12 20:32:00.245 INFO  daiab %% - On Bar No.0 (MIN_INTERVAL) 1 (SOURCE_INDEX) 1 
+18-01-12 20:32:00.245 INFO  daiab %% - {} 
+18-01-12 20:33:00.245 INFO  daiab %% - On Bar No.0 (MIN_INTERVAL) 1 (SOURCE_INDEX) 1 
+18-01-12 20:33:00.245 INFO  daiab %% - {} 
+18-01-12 20:34:00.245 INFO  daiab %% - On Bar No.0 (MIN_INTERVAL) 1 (SOURCE_INDEX) 1 
+18-01-12 20:34:00.245 INFO  daiab %% - {} 
+18-01-12 20:35:00.245 INFO  daiab %% - On Bar No.0 (MIN_INTERVAL) 1 (SOURCE_INDEX) 1 
+18-01-12 20:35:00.245 INFO  daiab %% - {} 
+18-01-12 20:36:00.245 INFO  daiab %% - On Bar No.0 (MIN_INTERVAL) 1 (SOURCE_INDEX) 1 
+18-01-12 20:36:00.245 INFO  daiab %% - {} 
+18-01-12 20:36:00.245 INFO  daiab %% - (Reread OUR SIGNAL) False 
+18-01-12 20:37:00.245 INFO  daiab %% - On Bar No.0 (MIN_INTERVAL) 1 (SOURCE_INDEX) 1 
+18-01-12 20:37:00.245 INFO  daiab %% - {} 
+18-01-12 20:38:00.245 INFO  daiab %% - On Bar No.0 (MIN_INTERVAL) 1 (SOURCE_INDEX) 1 
+18-01-12 20:38:00.245 INFO  daiab %% - {} 
+18-01-12 20:39:00.245 INFO  daiab %% - On Bar No.0 (MIN_INTERVAL) 1 (SOURCE_INDEX) 1 
+18-01-12 20:39:00.245 INFO  daiab %% - {} 
+18-01-12 20:40:00.245 INFO  daiab %% - On Bar No.0 (MIN_INTERVAL) 1 (SOURCE_INDEX) 1 
+18-01-12 20:40:00.245 INFO  daiab %% - {} 
+18-01-12 20:41:00.245 INFO  daiab %% - On Bar No.0 (MIN_INTERVAL) 1 (SOURCE_INDEX) 1 
+18-01-12 20:41:00.245 INFO  daiab %% - {} 
+18-01-12 20:41:00.245 INFO  daiab %% - (Reread OUR SIGNAL) False 
+18-01-12 20:42:00.245 INFO  daiab %% - On Bar No.0 (MIN_INTERVAL) 1 (SOURCE_INDEX) 1 
+18-01-12 20:42:00.245 INFO  daiab %% - {} 
+18-01-12 20:43:00.245 INFO  daiab %% - On Bar No.0 (MIN_INTERVAL) 1 (SOURCE_INDEX) 1 
+18-01-12 20:43:00.245 INFO  daiab %% - {} 
+18-01-12 20:44:00.245 INFO  daiab %% - On Bar No.0 (MIN_INTERVAL) 1 (SOURCE_INDEX) 1 
+18-01-12 20:44:00.245 INFO  daiab %% - {} 
+18-01-12 20:45:00.245 INFO  daiab %% - On Bar No.0 (MIN_INTERVAL) 1 (SOURCE_INDEX) 1 
+18-01-12 20:45:00.245 INFO  daiab %% - {} 
+18-01-12 20:46:00.245 INFO  daiab %% - On Bar No.0 (MIN_INTERVAL) 1 (SOURCE_INDEX) 1 
+18-01-12 20:46:00.249 INFO  daiab %% - {} 
+18-01-12 20:46:00.249 INFO  daiab %% - (Reread OUR SIGNAL) False 
+18-01-12 20:47:00.245 INFO  daiab %% - On Bar No.0 (MIN_INTERVAL) 1 (SOURCE_INDEX) 1 
+18-01-12 20:47:00.245 INFO  daiab %% - {} 
+18-01-12 20:48:00.245 INFO  daiab %% - On Bar No.0 (MIN_INTERVAL) 1 (SOURCE_INDEX) 1 
+18-01-12 20:48:00.247 INFO  daiab %% - {} 
+18-01-12 20:49:00.245 INFO  daiab %% - On Bar No.0 (MIN_INTERVAL) 1 (SOURCE_INDEX) 1 
+18-01-12 20:49:00.245 INFO  daiab %% - {} 
+18-01-12 20:50:00.253 INFO  daiab %% - On Bar No.0 (MIN_INTERVAL) 1 (SOURCE_INDEX) 1 
+18-01-12 20:50:00.253 INFO  daiab %% - {} 
+18-01-12 20:51:00.245 INFO  daiab %% - On Bar No.0 (MIN_INTERVAL) 1 (SOURCE_INDEX) 1 
+18-01-12 20:51:00.245 INFO  daiab %% - {} 
+18-01-12 20:51:00.245 INFO  daiab %% - (Reread OUR SIGNAL) False 
+18-01-12 20:52:00.245 INFO  daiab %% - On Bar No.0 (MIN_INTERVAL) 1 (SOURCE_INDEX) 1 
+18-01-12 20:52:00.245 INFO  daiab %% - {} 
+18-01-12 20:53:00.245 INFO  daiab %% - On Bar No.0 (MIN_INTERVAL) 1 (SOURCE_INDEX) 1 
+18-01-12 20:53:00.245 INFO  daiab %% - {} 
+18-01-12 20:54:00.245 INFO  daiab %% - On Bar No.0 (MIN_INTERVAL) 1 (SOURCE_INDEX) 1 
+18-01-12 20:54:00.245 INFO  daiab %% - {} 
+18-01-12 20:55:00.245 INFO  daiab %% - On Bar No.0 (MIN_INTERVAL) 1 (SOURCE_INDEX) 1 
+18-01-12 20:55:00.245 INFO  daiab %% - {} 
+18-01-12 20:56:00.245 INFO  daiab %% - On Bar No.0 (MIN_INTERVAL) 1 (SOURCE_INDEX) 1 
+18-01-12 20:56:00.245 INFO  daiab %% - {} 
+18-01-12 20:56:00.245 INFO  daiab %% - (Reread OUR SIGNAL) False 
+18-01-12 20:57:00.245 INFO  daiab %% - On Bar No.0 (MIN_INTERVAL) 1 (SOURCE_INDEX) 1 
+18-01-12 20:57:00.245 INFO  daiab %% - {} 
+18-01-12 20:58:00.245 INFO  daiab %% - On Bar No.0 (MIN_INTERVAL) 1 (SOURCE_INDEX) 1 
+18-01-12 20:58:00.245 INFO  daiab %% - {} 
+18-01-12 20:59:00.251 INFO  daiab %% - On Bar No.0 (MIN_INTERVAL) 1 (SOURCE_INDEX) 1 
+18-01-12 20:59:00.251 INFO  daiab %% - {} 
+18-01-12 21:00:00.248 INFO  daiab %% - OUR SIGNAL: False 
+18-01-12 21:00:00.249 INFO  daiab %% - On Bar No.0 (MIN_INTERVAL) 1 (SOURCE_INDEX) 1 
+18-01-12 21:00:00.249 INFO  daiab %% - {} 
+18-01-12 21:01:00.257 INFO  daiab %% - On Bar No.0 (MIN_INTERVAL) 1 (SOURCE_INDEX) 1 
+18-01-12 21:01:00.257 INFO  daiab %% - {} 
+18-01-12 21:01:00.257 INFO  daiab %% - (Reread OUR SIGNAL) False 
+18-01-12 21:02:00.245 INFO  daiab %% - On Bar No.0 (MIN_INTERVAL) 1 (SOURCE_INDEX) 1 
+18-01-12 21:02:00.245 INFO  daiab %% - {} 
+18-01-12 21:03:00.245 INFO  daiab %% - On Bar No.0 (MIN_INTERVAL) 1 (SOURCE_INDEX) 1 
+18-01-12 21:03:00.245 INFO  daiab %% - {} 
+18-01-12 21:04:00.245 INFO  daiab %% - On Bar No.0 (MIN_INTERVAL) 1 (SOURCE_INDEX) 1 
+18-01-12 21:04:00.245 INFO  daiab %% - {} 
+18-01-12 21:05:00.245 INFO  daiab %% - On Bar No.0 (MIN_INTERVAL) 1 (SOURCE_INDEX) 1 
+18-01-12 21:05:00.245 INFO  daiab %% - {} 
+18-01-12 21:06:00.252 INFO  daiab %% - On Bar No.0 (MIN_INTERVAL) 1 (SOURCE_INDEX) 1 
+18-01-12 21:06:00.253 INFO  daiab %% - {} 
+18-01-12 21:06:00.253 INFO  daiab %% - (Reread OUR SIGNAL) False 
+18-01-12 21:07:00.245 INFO  daiab %% - On Bar No.0 (MIN_INTERVAL) 1 (SOURCE_INDEX) 1 
+18-01-12 21:07:00.245 INFO  daiab %% - {} 
+18-01-12 21:08:00.246 INFO  daiab %% - On Bar No.0 (MIN_INTERVAL) 1 (SOURCE_INDEX) 1 
+18-01-12 21:08:00.246 INFO  daiab %% - {} 
+18-01-12 21:09:00.245 INFO  daiab %% - On Bar No.0 (MIN_INTERVAL) 1 (SOURCE_INDEX) 1 
+18-01-12 21:09:00.245 INFO  daiab %% - {} 
+18-01-12 21:10:00.245 INFO  daiab %% - On Bar No.0 (MIN_INTERVAL) 1 (SOURCE_INDEX) 1 
+18-01-12 21:10:00.245 INFO  daiab %% - {} 
+18-01-12 21:11:00.245 INFO  daiab %% - On Bar No.0 (MIN_INTERVAL) 1 (SOURCE_INDEX) 1 
+18-01-12 21:11:00.245 INFO  daiab %% - {} 
+18-01-12 21:11:00.245 INFO  daiab %% - (Reread OUR SIGNAL) False 
+18-01-12 21:12:00.254 INFO  daiab %% - On Bar No.0 (MIN_INTERVAL) 1 (SOURCE_INDEX) 1 
+18-01-12 21:12:00.254 INFO  daiab %% - {} 
+18-01-12 21:13:00.245 INFO  daiab %% - On Bar No.0 (MIN_INTERVAL) 1 (SOURCE_INDEX) 1 
+18-01-12 21:13:00.249 INFO  daiab %% - {} 
+18-01-12 21:14:00.245 INFO  daiab %% - On Bar No.0 (MIN_INTERVAL) 1 (SOURCE_INDEX) 1 
+18-01-12 21:14:00.245 INFO  daiab %% - {} 
+18-01-12 21:15:00.254 INFO  daiab %% - On Bar No.0 (MIN_INTERVAL) 1 (SOURCE_INDEX) 1 
+18-01-12 21:15:00.254 INFO  daiab %% - {} 
+18-01-12 21:16:00.245 INFO  daiab %% - On Bar No.0 (MIN_INTERVAL) 1 (SOURCE_INDEX) 1 
+18-01-12 21:16:00.245 INFO  daiab %% - {} 
+18-01-12 21:16:00.245 INFO  daiab %% - (Reread OUR SIGNAL) False 
+18-01-12 21:17:00.245 INFO  daiab %% - On Bar No.0 (MIN_INTERVAL) 1 (SOURCE_INDEX) 1 
+18-01-12 21:17:00.245 INFO  daiab %% - {} 
+18-01-12 21:17:09.670 DEBUG daiab %% - [DataWrapper] signal received: 15 
