@@ -23,25 +23,25 @@ STATUS_ACTION = {
         (True, True): (DIRECTION.Buy, OFFSET.Open),  # (True, True) means (predict price up, people signal up)
         (False, False): (DIRECTION.Sell, OFFSET.Open),
         (True, False): None,
-        (True, False): None,
+        (False, True): None,
     },
     POS_LONG: {
         (True, True): None,
-        (False, False): (DIRECTION.Sell, OFFSET.Close),
-        (True, False): (DIRECTION.Sell, OFFSET.Close),
-        (True, False): (DIRECTION.Sell, OFFSET.Close)
+        (False, False): (DIRECTION.Sell, OFFSET.CloseToday),
+        (True, False): (DIRECTION.Sell, OFFSET.CloseToday),
+        (False, True): (DIRECTION.Sell, OFFSET.CloseToday)
     },
     POS_SHORT: {
-        (True, True): (DIRECTION.Buy, OFFSET.Close),
+        (True, True): (DIRECTION.Buy, OFFSET.CloseToday),
         (False, False): None,
-        (True, False): (DIRECTION.Buy, OFFSET.Close),
-        (True, False): (DIRECTION.Buy, OFFSET.Close)
+        (True, False): (DIRECTION.Buy, OFFSET.CloseToday),
+        (False, True): (DIRECTION.Buy, OFFSET.CloseToday)
     }
 }
 
 ACTION_NAME = {
-    (DIRECTION.Buy, OFFSET.Close): ('Buy', 'Close'),
-    (DIRECTION.Sell, OFFSET.Close): ('Sell', 'Close'),
+    (DIRECTION.Buy, OFFSET.CloseToday): ('Buy', 'CloseToday'),
+    (DIRECTION.Sell, OFFSET.CloseToday): ('Sell', 'CloseToday'),
     (DIRECTION.Buy, OFFSET.Open): ('Buy', 'Open'),
     (DIRECTION.Sell, OFFSET.Open): ('Sell', 'Open'),
 }
@@ -107,7 +107,7 @@ def initialize(context):
     context.add_md(source=SOURCE_INDEX)
     context.add_td(source=SOURCE_INDEX)
     context.register_bar(source=SOURCE_INDEX, min_interval=MIN_INTERVAL,
-                         start_time="09:00:00", end_time="20:00:00")
+                         start_time="09:00:00", end_time="23:02:00")
     context.subscribe([M_TICKER], source=SOURCE_INDEX)
     # necessary initialization of internal fields.
     context.person_direction = read_signal_file()
@@ -137,8 +137,9 @@ def on_pos(context, pos_handler, request_id, source, rcv_time):
         context.log_debug("[RSP_POS] {}".format(pos_handler.dump()))
 
 
-# def on_tick(context, md, source, rcv_time):
-#     context.log_info('on tick (InstrumentID) %s' % md.InstrumentID)
+def on_tick(context, md, source, rcv_time):
+    pass
+    # context.log_info('on tick (InstrumentID) %s' % md.InstrumentID)
 
 
 def on_bar(context, bars, min_interval, source, rcv_time):
@@ -147,7 +148,7 @@ def on_bar(context, bars, min_interval, source, rcv_time):
     if min_interval == MIN_INTERVAL and source == SOURCE_INDEX and context.td_connected:
         context.log_info('(bars) %s' % bars)
         for ticker, bar in bars.items():
-            if not parse_str(ticker, M_TICKER):
+            if not str_equals(ticker, M_TICKER):
                 context.log_info('(Receive Other Ticker) %s' % ticker)
                 continue
             context.signal.TickPrice.append((bar.Volume, bar.Turnover))
@@ -165,14 +166,16 @@ def on_bar(context, bars, min_interval, source, rcv_time):
                     status = context.signal.pos_status
                     action = STATUS_ACTION[status][event]
                     if action is not None:
+                        price = bar.UpperLimitPrice if action[0] == DIRECTION.Buy else bar.LowerLimitPrice
                         context.rid = context.insert_limit_order(source=SOURCE_INDEX,
                                                                  ticker=M_TICKER,
                                                                  exchange_id=M_EXCHANGE,
-                                                                 price=bar.UpperLimitPrice,
+                                                                 price=price,
                                                                  volume=context.signal.trade_size,
                                                                  direction=action[0],
                                                                  offset=action[1])
-                        context.log_info('(Insert Order Action) %s (Rid) %s' % (ACTION_NAME[action], context.rid))
+                        context.log_info('(Insert Order Action) %s (Price) %s (Rid) %s' %
+                                         (ACTION_NAME[action], price, context.rid))
                         if context.rid > 0:
                             context.trade_completed = False
                     else:
@@ -201,6 +204,8 @@ def on_rtn_trade(context, rtn_trade, order_id, source, rcv_time):
 
 
 def on_error(context, error_id, error_msg, order_id, source, rcv_time):
+    if order_id == context.rid and source == SOURCE_INDEX:
+        context.trade_completed = True
     context.log_error(
         "[ERROR] (err_id){} (err_msg){} (order_id){} (source){}".format(error_id, error_msg, order_id, source))
 
@@ -210,4 +215,4 @@ def on_switch_day(context, rcv_time):
     context.person_direction = read_signal_file()
     context.log_info('OUR SIGNAL: %s' % context.person_direction)
     context.register_bar(source=SOURCE_INDEX, min_interval=MIN_INTERVAL,
-                         start_time="20:55:00", end_time="20:00:00")
+                         start_time="23:59:00", end_time="23:58:00")
